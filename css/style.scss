@@ -1,0 +1,22 @@
+
+h1 {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 4em;
+    text-align: center;
+    width: 100vw;
+}
+
+h2 {
+    font-family:'Courier New', Courier, monospace;
+    text-align: center;
+    font-size: 3em;
+}
+
+#form {
+    position: absolute;
+    font-size: 2em;
+    top: 50vh;
+    text-align: center;
+    transform: translate(-50%, -50%);
+    left: 50vw;
+}
