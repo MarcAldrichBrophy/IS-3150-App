@@ -1,4 +1,15 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+body {
+  background: #1d1d1d;
+  height: 100vh;
+}
+
 h1 {
+  color: white;
   font-family: "Courier New", Courier, monospace;
   font-size: 4em;
   text-align: center;
