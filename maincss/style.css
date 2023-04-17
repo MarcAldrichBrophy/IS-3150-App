@@ -54,4 +54,17 @@ body {
   flex-shrink: 0;
   min-width: 100%;
   min-height: 100%;
+}
+
+button {
+  position: absolute;
+  width: 400px;
+  height: 100px;
+  cursor: pointer;
+  font-size: 40px;
+  background-color: rgb(129, 129, 255);
+  z-index: 20;
+  left: 50vw;
+  top: 50vh;
+  transform: translate(-50%, -50%);
 }/*# sourceMappingURL=style.css.map */
