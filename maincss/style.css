@@ -68,4 +68,10 @@ button {
   top: 50vh;
   transform: translate(-50%, -50%);
   color: black;
+}
+
+.productButton {
+  border-radius: 20px;
+  margin-left: 5px;
+  margin-right: 5px;
 }/*# sourceMappingURL=style.css.map */
