@@ -35,12 +35,17 @@ function productPost(total) {
 
     postProductReq.onreadystatechange = function() {
         if(this.readyState == 4 && this.status == 200) {
-            document.location.href = "/post.html";
+            // document.location.href = "/post.html";
         }
         else if(this.readyState == 4 && this.status != 200) {
-            document.location.href = "/postError.html";
+            // document.location.href = "/postError.html";
         }
     }
+}
+
+function isNumeric(str) {
+    // if (typeof str != "string") return false
+    return !isNaN(str) && !isNaN(parseFloat(str))
 }
 
 // Function grabs product data, then adds to requested amount.
@@ -55,18 +60,24 @@ function submitClick() {
     // Waits for request to process.
     getProdReq.onreadystatechange = function() {
         let total = parseInt(document.getElementById("inputVal").value);
-        const data = getProdReq.responseText;
-        const jsonData = JSON.parse(data);
+
         if(this.readyState == 4 && this.status == 200) {
-            if(parseInt(jsonData.qty)) {
+           
+            const data = getProdReq.responseText;
+            const jsonData = JSON.parse(data);
+            console.log("Posting value.");
+            console.log(isNumeric(jsonData.qty));
+            if(isNaN(parseInt(jsonData.qty))) {
+                console.log("is integer");
                 total = total + parseInt(jsonData.qty);
             }
-            if(!total || isNaN(total)) {
-                total = 0;
-            }
+            // if(!total || isNaN(total)) {
+            //     total = ;
+            // }
             productPost(total);
         }
         else if(this.readyState == 4 && this.status == 404) {
+            console.log("Posting 404");
             productPost(total);
         }
     }
