@@ -35,18 +35,14 @@ function productPost(total) {
 
     postProductReq.onreadystatechange = function() {
         if(this.readyState == 4 && this.status == 200) {
-            // document.location.href = "/post.html";
+            document.location.href = "/post.html";
         }
         else if(this.readyState == 4 && this.status != 200) {
-            // document.location.href = "/postError.html";
+            document.location.href = "/postError.html";
         }
     }
 }
 
-function isNumeric(str) {
-    // if (typeof str != "string") return false
-    return !isNaN(str) && !isNaN(parseFloat(str))
-}
 
 // Function grabs product data, then adds to requested amount.
 function submitClick() {
@@ -59,21 +55,27 @@ function submitClick() {
 
     // Waits for request to process.
     getProdReq.onreadystatechange = function() {
-        let total = parseInt(document.getElementById("inputVal").value);
+        let total = Number(document.getElementById("inputVal").value);
 
         if(this.readyState == 4 && this.status == 200) {
            
             const data = getProdReq.responseText;
             const jsonData = JSON.parse(data);
-            console.log("Posting value.");
-            console.log(isNumeric(jsonData.qty));
-            if(isNaN(parseInt(jsonData.qty))) {
-                console.log("is integer");
+            
+            console.log(Number.isInteger(total));
+            if(parseInt(jsonData.qty) && Number.isInteger(total)) { //  Good input, good data.
                 total = total + parseInt(jsonData.qty);
             }
-            // if(!total || isNaN(total)) {
-            //     total = ;
-            // }
+            else if(parseInt(jsonData.qty) && !Number.isInteger(total)) { // Invalid input, good data.
+                total = parseInt(jsonData.qty);
+            }
+            else if(!parseInt(jsonData.qty) && Number.isInteger(total)) { // Good input, invalid data.
+                console.log("Good to use total.");
+            }
+            else {
+                document.location.href = "/postError.html";
+                return;
+            }
             productPost(total);
         }
         else if(this.readyState == 4 && this.status == 404) {
