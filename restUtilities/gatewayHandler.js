@@ -1,7 +1,7 @@
 
-var path = window.location.pathname;
-var page = path.split("/").pop();
-var productNumber = page.match(/\d+/)[0];
+const path = window.location.pathname;
+const page = path.split("/").pop();
+const productNumber = page.match(/\d+/)[0];
 
 // Gets data based on page viewed.
 const prodVal = "https://7ofe4vwhj7.execute-api.us-west-2.amazonaws.com/prod/product?productId=" + productNumber;
@@ -67,7 +67,9 @@ function submitClick() {
                 total = total + parseInt(jsonData.qty);
             }
             else if(parseInt(jsonData.qty) && !Number.isInteger(total)) { // Invalid input, good data.
-                total = parseInt(jsonData.qty);
+                document.location.href = "/postError.html";
+                return;
+                // total = parseInt(jsonData.qty);
             }
             else if(!parseInt(jsonData.qty) && Number.isInteger(total)) { // Good input, invalid data.
                 console.log("Good to use total.");
