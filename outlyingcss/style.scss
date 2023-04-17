@@ -1,0 +1,18 @@
+
+#container {
+    position: absolute;
+    left: 50vw;
+    top: 50vh;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    h1 {
+        font-size: 200px;
+    }
+    button {
+        width: 400px;
+        height: 100px;
+        cursor: pointer;
+        font-size: 40px;
+        background-color: rgb(129, 129, 255);
+    }
+}

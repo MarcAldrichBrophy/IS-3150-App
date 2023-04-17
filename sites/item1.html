@@ -1,22 +1,25 @@
 <!DOCTYPE html>
 
 <head>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="/restUtilities/gatewayHandler.js"></script>
 </head>
 
 <body>
-    <h1>Product Cataloger</h1>
-    <h2>Product 001</h2>
+    <div id="titleDiv">
+        <h1>Product Cataloger</h1>
+        <h2>Product 001</h2>
+    </div>
+    
+    <h3 id="dataAmount">Quantity in database: loading...</h3>
 
-    <!-- <form> -->
     <div id="form">
         <label for="fname">Quantity:</label><br>
-        <input type="text" id="fname" name="fname"><br>
-        <a href="post.html">
-            <button>Submit</button>
-        </a>
+        <input type="text" id="inputVal" name="fname"><br>
+            <button id="submitButton">Submit</button>
     </div>
-    <!-- </form>  -->
+
+    <a href="/index.html" id="homeButton">home</a>
 
 </body>
 

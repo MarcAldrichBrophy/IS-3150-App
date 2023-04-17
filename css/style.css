@@ -4,22 +4,24 @@
 }
 
 body {
-  background: #1d1d1d;
+  background: #929292;
   height: 100vh;
 }
 
-h1 {
-  color: white;
+#titleDiv {
+  position: absolute;
   font-family: "Courier New", Courier, monospace;
-  font-size: 4em;
   text-align: center;
   width: 100vw;
+  top: 2vh;
 }
-
-h2 {
-  font-family: "Courier New", Courier, monospace;
-  text-align: center;
+#titleDiv h1 {
+  font-size: 4em;
+  color: white;
+}
+#titleDiv h2 {
   font-size: 3em;
+  color: rgb(139, 29, 29);
 }
 
 #form {
@@ -29,4 +31,40 @@ h2 {
   text-align: center;
   transform: translate(-50%, -50%);
   left: 50vw;
+  width: 50vw;
+  height: 50vh;
+}
+#form #inputVal {
+  height: 50px;
+  width: 200px;
+  font-size: 40px;
+  margin-top: 2vh;
+}
+#form #submitButton {
+  height: 100px;
+  width: 400px;
+  font-size: 40px;
+  margin-top: 5vh;
+  border-radius: 20px;
+}
+
+#dataAmount {
+  position: absolute;
+  top: 75vh;
+  left: 50vw;
+  transform: translate(-50%, -50%);
+}
+
+#homeButton {
+  position: absolute;
+  top: 90vh;
+  left: 50vw;
+  transform: translate(-50%, -50%);
+  font-size: 100px;
+  background-color: rgb(190, 190, 190);
+  color: black;
+  text-decoration: none;
+  width: 50vw;
+  text-align: center;
+  border-radius: 20px;
 }/*# sourceMappingURL=style.css.map */
